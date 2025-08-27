@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Villabona | Desarrollador de Software</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/css/phosphor.css" />
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-slate-900 text-slate-300">
+
+    <div class="container mx-auto max-w-5xl px-4 py-16 md:py-24">
+
+        <section id="inicio" class="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 reveal">
+            <div class="md:w-3/5 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white">
+                    Hola, soy <span class="gradient-text">Bryan Villabona</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl font-medium text-slate-400">
+                    Ingeniero de sistemas | Apasionado por crear soluciones web innovadoras y eficientes.
+                </p>
+
+                <div id="terminal"
+                    class="mt-8 p-4 bg-slate-800/80 rounded-md shadow-lg border border-slate-700 font-mono text-sm min-h-[140px]">
+                    <div id="terminal-output"></div>
+                    <div class="flex items-center">
+                        <span class="text-green-400">guest@admin:~$</span>
+                        <span id="terminal-cursor" class="w-2 h-4 bg-green-400 ml-2 animate-pulse"></span>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start gap-4">
+                    <a href="#proyectos"
+                        class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105 flex items-center gap-2">
+                        <i class="ph ph-rocket-launch"></i>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contacto"
+                        class="border-2 border-slate-500 hover:bg-slate-800 text-slate-300 font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105">
+                        Contáctame
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start gap-6">
+                    <a href="https://github.com/BryanVillabona" target="_blank" aria-label="Perfil de GitHub"
+                        class="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+                        <i class="ph-fill ph-github-logo text-4xl"></i>
+                    </a>
+                    <a href="URL_DE_TU_LINKEDIN" target="_blank" aria-label="Perfil de LinkedIn"
+                        class="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+                        <i class="ph-fill ph-linkedin-logo text-4xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+                <div
+                    class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1.5 transform transition-transform duration-500 hover:rotate-6">
+                    <img src="./img/WhatsApp Image 2025-02-19 at 4.44.19 PM.jpeg" alt="foto bryan villabona"
+                        class="w-full h-full object-cover rounded-full bg-slate-800" />
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="mt-24 md:mt-32 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">
+                Mi <span class="gradient-text">Stack Tecnológico</span>
+            </h2>
+            <p class="text-center text-slate-400 mt-2">Haz clic en una tecnología para filtrar mis proyectos.</p>
+            <div id="tech-filters" class="flex flex-wrap justify-center gap-4 mt-8">
+                <button data-tech="all"
+                    class="tech-filter-btn active bg-cyan-500 text-white font-semibold py-2 px-4 rounded-lg transition-all">Todas</button>
+                <button data-tech="javascript"
+                    class="tech-filter-btn bg-slate-800 hover:bg-cyan-500 hover:text-white font-semibold py-2 px-4 rounded-lg transition-all">Javascript</button>
+                <button data-tech="python"
+                    class="tech-filter-btn bg-slate-800 hover:bg-cyan-500 hover:text-white font-semibold py-2 px-4 rounded-lg transition-all">Python</button>
+                <button data-tech="sql"
+                    class="tech-filter-btn bg-slate-800 hover:bg-cyan-500 hover:text-white font-semibold py-2 px-4 rounded-lg transition-all">SQL/NoSQL</button>
+            </div>
+        </section>
+
+        <div id="pagination-controls" class="flex justify-center items-center gap-6 mt-10">
+            <button id="prev-btn"
+                class="bg-slate-800 p-2 rounded-full text-slate-400 hover:bg-cyan-500 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="ph ph-caret-left text-2xl"></i>
+            </button>
+            <span id="page-info" class="font-semibold text-slate-400 text-lg"></span>
+            <button id="next-btn"
+                class="bg-slate-800 p-2 rounded-full text-slate-400 hover:bg-cyan-500 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="ph ph-caret-right text-2xl"></i>
+            </button>
+        </div>
+
+        <section id="proyectos" class="mt-12">
+            <div id="projects-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="project-card reveal" data-tech="html javascript css">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/starwars.png" alt="proyecto-1-starwars" class="w-full h-48 ">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">STAR WARS </h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                Una aplicación web interactiva como parte de mi formación académica, permite explorar el
+                                vasto universo de Star Wars utilizando la API oficial de SWAPI. Descubre personajes,
+                                planetas, especies, naves espaciales y vehículos de la saga más icónica del cine.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                                <span
+                                    class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                                <span
+                                    class="bg-yellow-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                                <span
+                                    class="bg-purple-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwindcss</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/pagina-star-wars.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="https://bryanvillabona.github.io/pagina-star-wars/" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="html javascript css">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/sportinfo.png" alt="proyecto sportinfo" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">SportInfo</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                Una aplicación web moderna para explorar equipos y ligas de fútbol de todo el mundo
+                                conectada a la api de thesportsdb, con
+                                una interfaz intuitiva que permite buscar, filtrar y gestionar equipos
+                                favoritos en el local Storage.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                                <span
+                                    class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                                <span
+                                    class="bg-yellow-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                                <span
+                                    class="bg-purple-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwindcss</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/SportInfo.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="https://bryanvillabona.github.io/SportInfo/" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="html javascript css">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/wwshop.png" alt="proyecto wwshop" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">World Wide Shop</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                World Wide Shop es un proyecto de comercio electrónico interactivo y responsivo. Este
+                                proyecto
+                                académico simula las funcionalidades esenciales de una tienda en línea, incluyendo la
+                                visualización de productos, un carrito de compras dinámico, autenticación de usuarios
+                                (login y registro), y un historial de pedidos.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                                <span
+                                    class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                                <span
+                                    class="bg-yellow-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                                <span
+                                    class="bg-purple-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwindcss</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/world-wide-shop.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="https://bryanvillabona.github.io/world-wide-shop/" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="html javascript css">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/PIZZADB.png" alt="proyecto pizzadb" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">PIZZADB</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                PizzaDB es un recurso didáctico en formato de aplicación web, diseñado para enseñar los
+                                fundamentos de las bases de datos relacionales de una manera creativa y
+                                comprensible. El proyecto busca desmitificar conceptos técnicos abstractos, haciéndolos
+                                accesibles para cualquier persona sin conocimientos previos en el área.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                                <span
+                                    class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                                <span
+                                    class="bg-yellow-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                                <span
+                                    class="bg-purple-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwindcss</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/Sebas404040/PIZZADB.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="https://sebas404040.github.io/PIZZADB/" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="python">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/wallet.jpg" alt="proyecto wallet" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">CAMPER WALLET</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                Wallet es un prototipo de aplicación desarrollado en Python como parte de un proyecto
+                                formativo en Campuslands. Esta aplicación se ejecuta por consola, sin
+                                interfaz gráfica, y está orientada al aprendizaje y desarrollo de habilidades en
+                                programación.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-red-900/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/Proyecto_Wallet.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="#" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold pointer-events-none cursor-default"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="sql">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/mascotas.png" alt="veterinaria" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Diseño BD Veterinaria</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                Este repositorio contiene el diseño y desarrollo del modelo de base de datos para una
+                                veterinaria, el cual permite gestionar información sobre dueños,
+                                mascotas, servicios, tratamientos, visitas y veterinarios.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-pink-500/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/Base-datos-veterinaria.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="#" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold pointer-events-none cursor-default"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" data-tech="sql">
+                    <div
+                        class="bg-slate-800/80 rounded-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group h-full flex flex-col">
+                        <img src="./img/gestion_logistica.png" alt="gestion-logistica" class="w-full h-48">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">Diseño BD Gestión Logistica</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                                Este proyecto simula su sistema de información mediante una base de datos en MongoDB,
+                                organizada en colecciones que representan los procesos reales de la compañía: clientes,
+                                envíos, facturación, soporte, rutas, oficinas, vehículos, incidencias y repartidores.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="bg-orange-500/50 text-white-300 text-xs font-semibold px-2.5 py-1 rounded-full">MongoDB</span>
+                            </div>
+                            <div class="flex justify-end gap-4 mt-auto">
+                                <a href="https://github.com/BryanVillabona/LogiXpress.git" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold"><i
+                                        class="ph ph-github-logo"></i> Código</a>
+                                <a href="#" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5 font-semibold pointer-events-none cursor-default"><i
+                                        class="ph ph-arrow-square-out"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experiencia" class="mt-24 md:mt-32">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">
+                Mi <span class="gradient-text">Trayectoria</span>
+            </h2>
+            <div class="mt-12 relative border-l-2 border-slate-700 ml-4 md:ml-0">
+                <div class="mb-10 ml-8 md:ml-0 reveal">
+                    <div class="absolute w-5 h-5 bg-cyan-500 rounded-full -left-2.5 border-4 border-slate-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">--Febrero 2025 - Presente</time>
+                    <h3 class="text-lg font-semibold text-white mt-1">Desarrollador Full Stack en Campuslands.
+                    </h3>
+                    <p class="text-base font-normal text-slate-400">Desarrollo y mantenimiento de aplicaciones web
+                        escalables, diseño/modelado de bases de datos SQL/NoSQL, uso de Git/Github para control de
+                        versiones,
+                        desarrollo de aplicaciones por consola mediante Python, fortalecimiento de habilidades blandas
+                        como trabajo en equipo,
+                        comunicación asertiva y resolución de problemas en entornos
+                        colaborativos. </p>
+                </div>
+                <div class="mb-10 ml-8 md:ml-0 reveal">
+                    <div class="absolute w-5 h-5 bg-cyan-500 rounded-full -left-2.5 border-4 border-slate-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">--Agosto 2022 - Diciembre
+                        2024</time>
+                    <h3 class="text-lg font-semibold text-white mt-1">Profesional de Soporte - Systech Soluciones
+                        Informáticas</h3>
+                    <p class="text-base font-normal text-slate-400">Mantenimiento preventivo y correctivo a equipos de
+                        cómputo, atención y resolución de incidentes mediante Service Desk, así como instalación y
+                        configuración de sistemas operativos, software y redes en entornos empresariales.</p>
+                </div>
+                <div class="ml-8 md:ml-0 reveal">
+                    <div class="absolute w-5 h-5 bg-cyan-500 rounded-full -left-2.5 border-4 border-slate-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">--Enero 2017 - Diciembre
+                        2023</time>
+                    <h3 class="text-lg font-semibold text-white mt-1">Ingenieria de Sistemas - Universidad de
+                        Investigación y Desarrollo UDI</h3>
+                    <p class="text-base font-normal text-slate-400">Obtención del título como ingeniero de sistemas,
+                        culminando así la etapa formativa profesional.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contacto" class="mt-24 md:mt-32 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold">
+                Hablemos de tu <span class="gradient-text">Próximo Proyecto</span>
+            </h2>
+            <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+                Estoy buscando activamente nuevas oportunidades y me encantaría colaborar. Si tienes un proyecto en
+                mente o simplemente quieres conectar, ¡no dudes en escribirme!
+            </p>
+
+            <div class="mt-8">
+                <a href="mailto:bvillabona13@gmail.com"
+                    class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-105 inline-block text-lg">
+                    <i class="ph ph-paper-plane-tilt -rotate-45 mr-2"></i>
+                    Envíame un Correo
+                </a>
+            </div>
+
+            <div class="my-8 flex items-center justify-center">
+                <span class="h-px w-24 bg-slate-700"></span>
+                <span class="px-4 text-sm uppercase text-slate-500">O</span>
+                <span class="h-px w-24 bg-slate-700"></span>
+            </div>
+
+            <div class="flex justify-center">
+                <a href="https://wa.me/573175819813" target="_blank"
+                    class="flex items-center gap-3 bg-slate-800 border border-slate-700 text-slate-300 font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:border-green-500/50 hover:text-white">
+                    <i class="ph-fill ph-whatsapp-logo text-green-500 text-2xl"></i>
+                    Chatea conmigo en WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center py-6 border-t border-slate-800">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="https://github.com/BryanVillabona" target="_blank" aria-label="Perfil de GitHub"
+                class="text-slate-500 hover:text-cyan-400 transition-colors duration-300">
+                <i class="ph-fill ph-github-logo text-3xl"></i>
+            </a>
+            <!-- <a href="URL_DE_TU_LINKEDIN" target="_blank" aria-label="Perfil de LinkedIn"
+                class="text-slate-500 hover:text-cyan-400 transition-colors duration-300">
+                <i class="ph-fill ph-linkedin-logo text-3xl"></i>
+            </a> -->
+        </div>
+        <p class="text-slate-500 text-sm">
+            Diseñado y construido por Bryan Villabona &copy; 2025
+        </p>
+    </footer>
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
